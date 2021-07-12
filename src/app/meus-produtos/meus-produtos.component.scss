@@ -1,0 +1,148 @@
+.topo{
+    padding: 0 50px 0 60px;
+}
+.topo h2{
+    font-family: "Proxima Nova",  sans-serif;
+    font-style: bold;
+    font-weight: 600;
+}
+.hr{
+    width: 99%;
+    margin-top: 25px;
+}
+.btnAdicionarProduto{
+    float:right;
+    margin-top:-55px;
+    background-color:#725172;
+    border-radius: 5px;
+    font-family: "Proxima Nova",  sans-serif;
+    color: #FFFFFF;
+    opacity: 1;
+    height:40px
+}
+.produtos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 22px;
+    padding: 20px;
+    border-radius: 8px;
+    height: auto;
+    width: auto;
+}
+
+.produtos h2 {
+    font-family: "Proxima Nova",  sans-serif;
+    font-style: bold;
+    font-weight: 600;
+}
+
+.img{
+    width: 85%;
+}
+.campos{
+    min-height: 80px;
+}
+.card_produtos{
+    width:260px;
+    padding:20px 10px 0 25px; 
+    margin:20px 0;
+    border-radius: 20px;
+    font-family: "Proxima Nova",  sans-serif;
+    font-style: bold;
+    font-weight: 600;
+}
+.card_produtos:hover{
+    box-shadow: 2px 2px 2px 2px #808080;
+
+}
+.descricao{
+    font-family: "Proxima Nova",  sans-serif;
+    font-style: bold;
+    font-weight: 500;  
+    color:#505050
+}
+.iconProduto{
+    color:#C9C9C9;
+    font-size: 40px;
+}
+
+.iconEditar{
+    padding:5px;
+    background-color:#725172;
+    color:#FFFFFF;
+    border-radius: 50%;
+}
+.iconExcluir{
+    padding:5px;
+    background-color:#BA1414;
+    color:#FFFFFF;
+    border-radius: 50%;
+}
+
+.tags{
+    width:100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom:40px;
+}
+
+.tag{
+    border: solid 1px #725172;
+    color:#725172;
+    padding:5px 15px 5px 15px;
+    border-radius: 15px;
+    margin: 2px 5px 0 5px;
+    font-family: "Proxima Nova",  sans-serif;
+    font-style: bold;
+    font-weight: 500;  
+}
+
+.brand{
+    position:absolute;
+    bottom:0px;
+    right:50px;
+}
+
+.footer p {
+    font-size: 13pt;
+    color:#4A4A4A;
+    margin-left:12px;
+    margin-bottom: -20px;
+    font-family: "Montserrat",  sans-serif;
+}
+.footer h3 {
+    font-size: 15pt;
+    color:#393939;
+    font-family: "Montserrat",  sans-serif;
+    font-weight: 1000;
+}
+.footer{
+    float: right;
+    margin: 9px 50px 0 0;
+}
+.mobile{
+    display:none
+}
+@media only screen and (max-width: 450px) {
+    .topo h2{
+        font-size: 14pt;
+    }
+    .fullscrean{
+        display: none;
+    }
+    .mobile{
+        display:inherit
+    }
+    .iconAdcionarProduto{
+        font-size: 40px;
+    }
+    .btnAdicionarProduto{
+        padding-left:0;
+        margin-left: 20px;
+    }
+    .topo{
+        padding-top:20px
+    }
+
+}

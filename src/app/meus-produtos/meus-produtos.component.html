@@ -1,0 +1,52 @@
+<app-navbar></app-navbar>
+<section class="topo">
+    <h2>Meus Produtos.</h2>
+    <button mat-button class="btnAdicionarProduto" (click)="abrirProduto()">
+        <span class="fullscrean">Adicionar Produto</span>
+        <span class="mobile">
+            <mat-icon class="iconAdcionarProduto">add</mat-icon>
+        </span>
+    </button>
+    <hr class="hr">
+</section>
+
+<section class="produtos">
+    <h2 *ngIf="produtos.length < 1">Voce não possui itens...</h2>
+    <mat-card class="card_produtos" *ngFor="let produto of produtos">
+        <mat-card-header>
+            <img class="img" mat-card-image src="assets/img/{{produto.img}}" alt="Photo of {{produto.nome}}">
+            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                <mat-icon class="iconProduto">more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu" style="width:100px" xPosition="before">
+                <button mat-menu-item (click)="abrirProduto(produto)">
+                    <mat-icon class="iconEditar">edit</mat-icon>
+                    <span> Editar </span>
+                </button>
+                <button mat-menu-item (click)="excluirProduto(produto)">
+                    <mat-icon class="iconExcluir">delete</mat-icon>
+                    <span> Excluir </span>
+                </button>
+            </mat-menu>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="campos">
+                <h3>{{produto.nome}}</h3>
+                <p class="descricao">{{produto.descricao}}</p>
+            </div>
+            <h3>{{produto.preco | currency:'BRL' }}</h3>
+            <hr>
+        </mat-card-content>
+        <mat-card-actions style="width:100%">
+            <div class="tags">
+                <span class="tag" *ngFor="let tag of produto.tags">{{tag}}</span>
+            </div>
+        </mat-card-actions>
+    </mat-card>
+</section>
+<footer>
+    <div class="footer">
+        <p>powered by</p>
+        <h3>DOUBLEIT</h3>
+    </div>
+</footer>

@@ -1,0 +1,17 @@
+<div class="header">
+    <p>{{tipo}}</p>
+    <button class="btnFecharTopo">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" (click)="fecharModal()">close</mat-icon>
+    </button>
+</div>
+<hr>
+<div class="formulario">
+    <p>Você realmente deseja excluir este produto?</p>
+</div>
+<div class="botoes">
+    <button mat-raised-button class="btnCancelar" (click)="fecharModal()">Cancelar</button>
+    <button mat-raised-button class="btnSalvar" (click)="confirmar()">Confirmar</button>
+</div>
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#725172" type="ball-newton-cradle" [fullScreen]="true">
+    <p class="spinnerTexto"> Aguarde... </p>
+</ngx-spinner>

@@ -1,0 +1,20 @@
+<mat-toolbar class="header" fxShow="true" fxHide.lt-sm="true">
+    <img routerLink="/home" class="logo" src="assets/img/logo.png" alt="">
+    <a class="link" routerLinkActive="active" routerLink="/home">Início</a>
+    <a class="link" routerLinkActive="active" routerLink="/meusProdutos">Meus Produtos</a>
+    <span class="example-spacer"></span>
+    <div class="vl"></div>
+    <img class="avatar" src="assets/img/user.jpg" alt="">
+    <span class="nome">{{nome}}</span>
+</mat-toolbar>
+<mat-toolbar class="header" fxShow="false" fxHide.lt-sm="false">
+    <img routerLink="/home" class="logo" src="assets/img/logo.png" alt="">
+    <span class="example-spacer"></span>
+    <button mat-icon-button fxShow="true" fxHide.gt-sm [matMenuTriggerFor]="menu">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLinkActive="active2" routerLink="/home">Início</button>
+        <button mat-menu-item routerLinkActive="active2" routerLink="/meusProdutos">Meus Produtos</button>
+    </mat-menu>
+</mat-toolbar>

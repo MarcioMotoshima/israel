@@ -1,0 +1,26 @@
+<div class="principal">
+    <div class="ladoEsquerdo"> </div>
+    <div class="aside">
+        <div class="formulario">
+            <h1>Entre.</h1>
+            <div class="hr"></div>
+            <mat-form-field appearance="outline" class="formEmail">
+                <mat-label>E-mail</mat-label>
+                <input matInput type="email" [(ngModel)]="usuario.email" class="inputEmail">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="formSenha">
+                <mat-label>Senha</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="usuario.senha"
+                    (keydown.enter)="logar()">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+            <button mat-button class="btn" (click)="logar()">ENTRAR</button>
+        </div>
+    </div>
+</div>
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#725172" type="ball-newton-cradle" [fullScreen]="true">
+    <p class="spinnerTexto"> Aguarde... </p>
+</ngx-spinner>

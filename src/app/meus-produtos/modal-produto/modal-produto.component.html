@@ -1,0 +1,65 @@
+<div class="header">
+    <p>{{tipo}}</p>
+    <button class="btnFecharTopo">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" (click)="fecharModal()">close</mat-icon>
+    </button>
+</div>
+<hr>
+<div class="formulario">
+    <mat-form-field appearance="outline" class="nome">
+        <mat-label>Nome</mat-label>
+        <input matInput [(ngModel)]="produto.nome">
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="descricao">
+        <mat-label>Descrição</mat-label>
+        <textarea matInput [(ngModel)]="produto.descricao"></textarea>
+    </mat-form-field>
+    <div class="separador">
+        <mat-form-field appearance="outline" class="preco">
+            <mat-label>Preço</mat-label>
+            <span matSuffix style="margin-bottom:10px">R$</span>
+            <input matInput type="text" [(ngModel)]="produto.preco">
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="data-remessa">
+            <mat-label>Data Remessa</mat-label>
+            <input matInput [matDatepicker]="picker" [(ngModel)]="produto.data_remessa">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+    </div>
+    <mat-form-field appearance="outline" class="categorias">
+        <mat-label>Categorias ( separe-as por vírgulas )</mat-label>
+        <input matInput [(ngModel)]="tags">
+    </mat-form-field>
+
+    <div class="drag">
+        <ngx-dropzone [disableClick]="true" (change)="pegararquivo($event, 1)"
+            style="width:100%;height:100%;border:none">
+            <ngx-dropzone-label style="width:100%">
+                <div class="dragMessage" *ngIf="!imagem.imagem">
+                    <p>Arraste uma imagem ou </p>
+                    <input type="file" #file style="display:none" (change)="pegararquivo($event, 0)">
+                    <button mat-raised-button class="btnPegarArquivo" (click)="file.click()">Selecionar</button>
+                </div>
+                <div *ngIf="imagem.imagem" class="imagemSelecionada">
+                    <span>{{imagem.imagem}} </span>
+                    <button mat-icon-button class="btnRemoverImagem">
+                        <mat-icon aria-hidden="false" aria-label="Example home icon" (click)="removerArquivo()">close
+                        </mat-icon>
+                    </button>
+                </div>
+            </ngx-dropzone-label>
+        </ngx-dropzone>
+    </div>
+
+
+
+
+    <div class="botoes">
+        <button mat-raised-button class="btnCancelar" (click)="fecharModal()">Cancelar</button>
+        <button mat-raised-button class="btnSalvar" (click)="cadastro()">Salvar</button>
+    </div>
+</div>
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#725172" type="ball-newton-cradle" [fullScreen]="true">
+    <p class="spinnerTexto"> Aguarde... </p>
+</ngx-spinner>

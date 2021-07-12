@@ -1,0 +1,38 @@
+.topo{
+    padding: 0 50px 0 60px;
+}
+.topo h2{
+    font-family: "Proxima Nova",  sans-serif;
+    font-style: bold;
+    font-weight: 600;
+}
+.hr{
+    width: 99%;
+}
+
+.brand{
+    position:absolute;
+    bottom:30px;
+    right:50px;
+}
+
+.brand p {
+    font-size: 13pt;
+    color:#4A4A4A;
+    margin-left:12px;
+    margin-bottom: -20px;
+    font-family: "Montserrat",  sans-serif;
+}
+.brand h3 {
+    font-size: 15pt;
+    color:#393939;
+    font-family: "Montserrat",  sans-serif;
+    font-weight: 1000;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .topo h2{
+        font-size: 14pt;
+    }
+}
